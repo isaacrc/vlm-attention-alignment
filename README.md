@@ -1,6 +1,7 @@
 # Attention Alignment Between Humans and Vision-Language Models
 
 [![arXiv](https://img.shields.io/badge/arXiv-2606.17410-b31b1b.svg)](https://arxiv.org/abs/2606.17410)
+[![HuggingFace](https://img.shields.io/badge/🤗%20HuggingFace-Weights-yellow)](https://huggingface.co/isaacrc/vlm-attention-alignment)
 
 Code and data for the paper:
 
@@ -75,7 +76,7 @@ Download from the [COCO dataset](https://cocodataset.org/#download) (val2017). T
 
 ### Model weights (HuggingFace)
 Pre-trained social-task checkpoints for all four models are available at:  
-**[https://huggingface.co/isaacrc/vlm-attention-alignment](https://huggingface.co/isaacrc/vlm-attention-alignment)** *(link TBD)*
+**[https://huggingface.co/isaacrc/vlm-attention-alignment](https://huggingface.co/isaacrc/vlm-attention-alignment)**
 
 | Model | Best social checkpoint |
 |---|---|
