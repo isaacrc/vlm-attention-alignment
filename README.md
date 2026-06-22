@@ -1,12 +1,16 @@
 # Attention Alignment Between Humans and Vision-Language Models
 
+[![arXiv](https://img.shields.io/badge/arXiv-2606.17410-b31b1b.svg)](https://arxiv.org/abs/2606.17410)
+
 Code and data for the paper:
 
 > **Attention Alignment Between Humans and Vision-Language Models**  
-> Isaac R. Christian, [co-authors TBD]  
-> *NeurIPS 2026 (under review)*
+> Isaac R. Christian, Udith Haputhanthrige, Hanna Hornfeld, Declan Campbell, Samuel Nastase, Taylor Webb, Michael Graziano  
+> *NeurIPS 2026 (under review)* · [arXiv:2606.17410](https://arxiv.org/abs/2606.17410)
 
 We compared spatial attention maps from six vision-language models against human fixation heatmaps recorded on 200 images during two tasks (general description and social captioning). The six models span a 2×2 factorial of CNN vs. ViT encoders crossed with LSTM vs. Transformer decoders, plus Molmo 7B-D and Qwen3.5 9B. Decoder architecture dominates fixation alignment: LSTM decoders reach 80–87% of the human noise ceiling; Transformer decoders reach 40–59%.
+
+![Attention maps by task and model](figures/output/fig5_qwen35_attn_by_task.png)
 
 ---
 
@@ -201,10 +205,10 @@ Model weights are not included. Download from:
 ## Citation
 
 ```bibtex
-@inproceedings{christian2026attention,
+@article{christian2026attention,
   title={Attention Alignment Between Humans and Vision-Language Models},
-  author={Christian, Isaac R. and others},
-  booktitle={NeurIPS},
+  author={Christian, Isaac R. and Haputhanthrige, Udith and Hornfeld, Hanna and Campbell, Declan and Nastase, Samuel and Webb, Taylor and Graziano, Michael},
+  journal={arXiv preprint arXiv:2606.17410},
   year={2026}
 }
 ```
