@@ -1,0 +1,28 @@
+# Model checkpoints
+*.pth
+*.pth.tar
+*.ckpt
+
+# Large numpy / data outputs
+*.npy
+*.npz
+# But allow eyetracking NPYs (tracked via Git LFS — see .gitattributes)
+!data/eyetracking/**/*.npy
+*.pt
+*.pkl
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.ipynb_checkpoints/
+
+# SLURM logs
+*.err
+*.out
+slurm/output/
+
+# Misc
+.DS_Store
+*.workspace
+*.jupyterlab-workspace
