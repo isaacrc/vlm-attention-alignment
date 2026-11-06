@@ -1,0 +1,57 @@
+subject,variant,roi,r2_attn
+3,Molmo social L10H24,early,0.024866638705134392
+3,Molmo social L10H24,ventral,0.01625991426408291
+3,Molmo social L10H24,lateral,0.016381720080971718
+3,Molmo social L10H24,parietal,0.006408607121556997
+3,Molmo social L10H24 norm,early,0.034852296113967896
+3,Molmo social L10H24 norm,ventral,0.023089513182640076
+3,Molmo social L10H24 norm,lateral,0.018635988235473633
+3,Molmo social L10H24 norm,parietal,0.01227306853979826
+3,Molmo social L10H24 mass,early,0.0011954946676269174
+3,Molmo social L10H24 mass,ventral,0.0071081132628023624
+3,Molmo social L10H24 mass,lateral,0.010861796326935291
+3,Molmo social L10H24 mass,parietal,0.0016077961772680283
+3,Molmo describe L10H27,early,0.028347373008728027
+3,Molmo describe L10H27,ventral,0.03087729960680008
+3,Molmo describe L10H27,lateral,0.028476612642407417
+3,Molmo describe L10H27,parietal,0.013160676695406437
+3,Molmo describe L10H27 norm,early,0.03479674085974693
+3,Molmo describe L10H27 norm,ventral,0.027631254866719246
+3,Molmo describe L10H27 norm,lateral,0.022540682926774025
+3,Molmo describe L10H27 norm,parietal,0.012685205787420273
+3,Molmo describe L10H27 mass,early,0.002162586897611618
+3,Molmo describe L10H27 mass,ventral,0.009479891508817673
+3,Molmo describe L10H27 mass,lateral,0.014194698072969913
+3,Molmo describe L10H27 mass,parietal,0.004522368311882019
+3,Molmo social L10H27,early,0.023130910471081734
+3,Molmo social L10H27,ventral,0.02009466290473938
+3,Molmo social L10H27,lateral,0.023529483005404472
+3,Molmo social L10H27,parietal,0.008203829638659954
+3,Molmo describe L8H7,early,0.02088540606200695
+3,Molmo describe L8H7,ventral,0.015719911083579063
+3,Molmo describe L8H7,lateral,0.008758646436035633
+3,Molmo describe L8H7,parietal,0.00973333977162838
+3,Qwen35 social L15H12,early,0.012345596216619015
+3,Qwen35 social L15H12,ventral,0.039467550814151764
+3,Qwen35 social L15H12,lateral,0.040952134877443314
+3,Qwen35 social L15H12,parietal,0.013283316977322102
+3,Qwen35 social L15H12 norm,early,0.011751776561141014
+3,Qwen35 social L15H12 norm,ventral,0.03369201719760895
+3,Qwen35 social L15H12 norm,lateral,0.03268251568078995
+3,Qwen35 social L15H12 norm,parietal,0.012066555209457874
+3,Qwen35 social L15H12 mass,early,0.005092700012028217
+3,Qwen35 social L15H12 mass,ventral,0.03672097623348236
+3,Qwen35 social L15H12 mass,lateral,0.042088594287633896
+3,Qwen35 social L15H12 mass,parietal,0.011351857334375381
+3,Qwen35 describe L7H9,early,0.009607388637959957
+3,Qwen35 describe L7H9,ventral,0.015285227447748184
+3,Qwen35 describe L7H9,lateral,0.009442946873605251
+3,Qwen35 describe L7H9,parietal,0.00791749358177185
+3,Qwen35 describe L7H9 norm,early,0.00654640095308423
+3,Qwen35 describe L7H9 norm,ventral,0.008124910295009613
+3,Qwen35 describe L7H9 norm,lateral,0.00627006683498621
+3,Qwen35 describe L7H9 norm,parietal,0.004753798246383667
+3,Qwen35 describe L7H9 mass,early,0.006293029990047216
+3,Qwen35 describe L7H9 mass,ventral,0.009868851862847805
+3,Qwen35 describe L7H9 mass,lateral,0.004726120736449957
+3,Qwen35 describe L7H9 mass,parietal,0.004291018471121788

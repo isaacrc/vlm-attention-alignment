@@ -1,0 +1,5 @@
+baseline,task,mean_r,pct_ceiling
+center_bias_prior,social,0.20867481681183878,75.91995159872033
+center_gaussian(s=0.2),social,0.2043364030447549,74.29545634576012
+center_bias_prior,describe,0.23686068878678374,95.16817940569211
+center_gaussian(s=0.2),describe,0.233075094771901,93.58885299794053

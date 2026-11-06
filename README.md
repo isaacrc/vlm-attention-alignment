@@ -7,7 +7,7 @@ Code and data for the paper:
 
 > **Attention Alignment Between Humans and Vision-Language Models**  
 > Isaac R. Christian, Udith Haputhanthrige, Hanna Hornfeld, Declan Campbell, Samuel Nastase, Taylor Webb, Michael Graziano  
-> *NeurIPS 2026 (under review)* · [arXiv:2606.17410](https://arxiv.org/abs/2606.17410)
+> *NeurIPS 2026* · [arXiv:2606.17410](https://arxiv.org/abs/2606.17410)
 
 We compared spatial attention maps from six vision-language models against human fixation heatmaps recorded on 200 images during two tasks (general description and social captioning). The six models span a 2×2 factorial of CNN vs. ViT encoders crossed with LSTM vs. Transformer decoders, plus Molmo 7B-D and Qwen3.5 9B. Decoder architecture dominates fixation alignment: LSTM decoders reach 80–87% of the human noise ceiling; Transformer decoders reach 40–59%.
 
@@ -22,7 +22,20 @@ models/          Model definitions and training scripts for all 4 factorial vari
 inference/       Beam-search attention extraction (parametrized by condition × phase)
 analysis/        Fixation alignment, RSA, between-task, and VLM head analysis scripts
 neglect/         Hemispatial neglect simulation scripts
-tribe/           TRIBE v2 neural encoding pipeline (exploratory extension)
+tribe/           TRIBE v2 neural encoding pipeline (exploratory; superseded by the NSD analysis)
+rebuttal/        Analyses added in review (see "Camera-ready analyses" below)
+  shared/        Shared alignment code: canonical checkpoints, subject exclusions, metrics, figure style
+  task1_head_selection/  Cross-validated Transformer head selection
+  task2_between_task/    Social vs. Describe map similarity
+  task3_baselines/       Saliency baselines (Itti-Koch, GBVS, spectral residual)
+  task4_metric_suite/    CC, SIM, NSS, AUC and sAUC alignment metrics
+  task5_statistics/      Permutation tests and mixed-effects models
+  task8_nsd/             Neural encoding of attention maps in the Natural Scenes Dataset
+  plots/         Figure scripts for the review analyses
+neurips_final/   Camera-ready figure scripts and final figures
+  novlm_2026-10-23/      Scripts for the camera-ready figures (Figures 1-7, appendix)
+  molmo_bilinear/, qwen35_nothink/  VLM attention re-extraction and checks
+  final_figures/manuscript_2026-11-02/  Final manuscript figures (PNG)
 figures/
   scripts/       Figure generation scripts (one script per manuscript figure)
   output/        Final manuscript figures (PNG)
@@ -72,7 +85,7 @@ git lfs pull
 ```
 
 ### COCO val images (not included)
-Download from the [COCO dataset](https://cocodataset.org/#download) (val2017). The 200 target image names are in `data/target_images.csv`.
+Download from the [COCO dataset](https://cocodataset.org/#download) (val2014; the models were trained on the Karpathy splits of COCO 2014). The 200 target image names are in `data/target_images.csv`.
 
 ### Model weights (HuggingFace)
 Pre-trained social-task checkpoints for all four models are available at:  
@@ -89,14 +102,15 @@ Pre-trained social-task checkpoints for all four models are available at:
 
 ## Models
 
-### Training pipeline (4 phases per model)
+### Training pipeline (3 phases per model)
 
 | Phase | Data | Encoder |
 |---|---|---|
-| Phase 1 — COCO pretrain | COCO captions | Frozen |
-| Phase 2 — COCO finetune | COCO captions | Unfrozen |
-| Social unfrozen | Social task captions | Unfrozen |
-| Social frozen | Social task captions | Frozen (encoder only) |
+| Phase 1 — COCO pretrain | COCO 2014 captions (Karpathy splits) | Frozen |
+| Phase 2 — COCO finetune | COCO 2014 captions (Karpathy splits) | Unfrozen |
+| Phase 3 — Social finetune (`train_social_unfrozen.py`) | Social task captions | Unfrozen |
+
+Describe-task analyses use the best Phase 2 checkpoint; Social-task analyses use the best Phase 3 checkpoint. `train_social_frozen.py` is an exploratory branch from Phase 2 that the paper does not use.
 
 ```bash
 # Example: CNN-Transformer Phase 1
@@ -188,6 +202,14 @@ python plot_fig5_attn_by_task.py   # Fig 5: attention maps by task
 python plot_neglect.py             # Neglect simulation figure
 ```
 
+### Camera-ready analyses
+The analyses reported in the camera-ready version live in `rebuttal/` and `neurips_final/`. Canonical
+checkpoints, subject exclusions (Describe n = 22) and the human ceilings are defined in
+`rebuttal/shared/alignment_core.py`. The neural encoding analysis (`rebuttal/task8_nsd/`) needs the
+Natural Scenes Dataset, which is not redistributed here; request access at
+[naturalscenesdataset.org](https://naturalscenesdataset.org). Summary results (CSV) are included;
+large intermediate arrays (`.npy`, `.npz`) are not.
+
 ---
 
 ## VLMs
@@ -199,7 +221,7 @@ Molmo 7B-D and Qwen3.5 9B were run with no fine-tuning. Their pre-extracted atte
 
 Model weights are not included. Download from:
 - Molmo: [allenai/Molmo-7B-D-0924](https://huggingface.co/allenai/Molmo-7B-D-0924)
-- Qwen3.5: [Qwen/Qwen2.5-VL-7B-Instruct](https://huggingface.co/Qwen/Qwen2.5-VL-7B-Instruct)
+- Qwen3.5: [Qwen/Qwen3.5-9B](https://huggingface.co/Qwen/Qwen3.5-9B)
 
 ---
 
