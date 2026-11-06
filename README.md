@@ -85,7 +85,7 @@ git lfs pull
 ```
 
 ### COCO val images (not included)
-Download from the [COCO dataset](https://cocodataset.org/#download) (val2014; the models were trained on the Karpathy splits of COCO 2014). The 200 target image names are in `data/target_images.csv`.
+Download from the [COCO dataset](https://cocodataset.org/#download). The 200 stimuli are COCO val2017 images; val2017 is a subset of val2014, and the inference scripts read them from `val2014/`. The models were trained on the Karpathy splits of COCO 2014. The 200 target image names are in `data/target_images.csv`.
 
 ### Model weights (HuggingFace)
 Pre-trained social-task checkpoints for all four models are available at:  

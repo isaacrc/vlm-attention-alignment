@@ -190,7 +190,7 @@ _CEIL_CACHE = {}
 def ceiling(task, imgs=None, as_r=False):
     """Human-human noise ceiling over the CANONICAL (exclusion-respecting) subject
     set. Per-image mean of pairwise Fisher-z Spearman, averaged over images.
-    Returns mean-z by default (paper convention: social 0.284, describe(22) 0.254)."""
+    Returns mean-z by default (social 0.279, describe(22) 0.254; as r: 0.272, 0.248)."""
     if task in _CEIL_CACHE:
         z = _CEIL_CACHE[task]
         return float(np.tanh(z)) if as_r else z
